@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>水浒人物关系图 · 恩义爱孝仇杀骗</title>
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<div id="app">
+
+  <!-- 左栏：人物名册 -->
+  <aside id="pane-left">
+    <div class="pane-head">
+      <h1>水浒人物关系图</h1>
+      <p class="sub">恩 · 义 · 爱 · 孝 · 仇 · 杀 · 骗</p>
+      <input id="search" type="search" placeholder="搜索人物 / 绰号…" autocomplete="off" />
+    </div>
+    <div id="roster" class="pane-body"></div>
+  </aside>
+
+  <!-- 分隔条：拖动可调整左栏宽度（双击复原） -->
+  <div class="gutter" id="gutter-left" title="拖动调整左栏宽度，双击复原"></div>
+
+  <!-- 中栏：关系图谱 -->
+  <main id="pane-center">
+    <canvas id="graph"></canvas>
+    <div id="legend" class="floating"></div>
+    <div id="toolbar" class="floating">
+      <button id="btn-reset" title="重新布局">重新布局</button>
+      <button id="btn-fit" title="适应窗口">适应窗口</button>
+      <button id="btn-labels" class="on" title="显示/隐藏姓名">姓名</button>
+      <span class="hint">滚轮缩放 · 拖拽平移 · 拖动节点</span>
+    </div>
+    <div id="tooltip" class="floating"></div>
+    <div id="statusbar" class="floating"></div>
+  </main>
+
+  <!-- 分隔条：拖动可调整右栏宽度（双击复原） -->
+  <div class="gutter" id="gutter-right" title="拖动调整右栏宽度，双击复原"></div>
+
+  <!-- 右栏：原著内容 -->
+  <aside id="pane-right">
+    <div class="pane-head">
+      <h2>原著对照</h2>
+    </div>
+    <div id="details" class="pane-body"></div>
+  </aside>
+
+</div>
+
+<script src="data/characters.js"></script>
+<script src="data/relations.js"></script>
+<script src="data/chapters.js"></script>
+<script src="js/graph.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
